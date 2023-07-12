@@ -1,0 +1,59 @@
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) 🌚 "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+ssh_symbol = '🌐 '
+format = 'on [$hostname](bold yellow) '
+disabled = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+# Replace the "✗" symbol in the prompt with ""
+[character]
+success_symbol = "[❯](bold cyan)"
+error_symbol = "[✗](bold red)"
+
+[directory]
+read_only = " ⛔"
+truncation_length = 10
+truncate_to_repo = true
+style = "bold italic blue"
+
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+disabled = false
+style = "bold italic red"
+
+[sudo]
+symbol = '🧙 '
+style = 'bold blue'
+disabled = false
+
+[c]
+disabled = false
+
+[java]
+symbol = '☕ '
+disabled = false
+
+[python]
+symbol = '🐍 '
+disabled = false
+
+[memory_usage]
+symbol = '🐏 '
+threshold = -1
+format = '$symbol[${ram_pct}( | ${swap_pct})]($style) '
+disabled = false
+
+[shell]
+disabled = false
+unknown_indicator = 'unknown shell'
+
+# [time]
+# disabled = false
