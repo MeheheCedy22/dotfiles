@@ -147,10 +147,18 @@ alias nalaupg="sudo nala upgrade"
 
 alias val="sudo valgrind --leak-check=yes -s ./a.out"
 
-alias rg="ripgrep"
+alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_1 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+
+alias cb='flatpak run app.getclipboard.Clipboard'
 
 #not needed because of package python-is-python3
 #alias python='python3'
+
+
+#source ~/.bash_completion/alacritty
+
+
 #_____________________________________________________________________________________________
 
 
