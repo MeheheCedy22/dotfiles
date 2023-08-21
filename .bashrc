@@ -5,9 +5,13 @@
 
 #_____________________________________________________________________________________________
 PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
-#PATH="/usr/lib/jvm/jdk-18/bin${PATH:+:${PATH}}" #pridane aby fungoval javac v celom systeme
+#   PATH="/usr/lib/jvm/jdk-18/bin${PATH:+:${PATH}}" #pridane aby fungoval javac v celom systeme
 PATH="/usr/bin/gdb${PATH:+:${PATH}}"
 PATH="/opt/idea-IU-231.9011.34/bin${PATH:+:${PATH}}"
+PATH="/opt/thunderbird${PATH:+:${PATH}}"
+
+# Random colored pictire when launching terminal
+#   colorscript -r
 
 #starship better shell prompt
 eval "$(starship init bash)"
@@ -133,6 +137,7 @@ fi
 ###my aliases###
 
 #for exa -h flag means header, not human readable
+#   alias lss='ls -alh1 --group-directories-first'
 alias lss='exa -alh --color=always --group-directories-first'
 alias cls='clear'
 alias watchvpn='watch -n 1 "hotspotshield status"'
