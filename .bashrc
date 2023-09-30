@@ -9,6 +9,8 @@ PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
 PATH="/usr/bin/gdb${PATH:+:${PATH}}"
 PATH="/opt/idea-IU-231.9011.34/bin${PATH:+:${PATH}}"
 PATH="/opt/thunderbird${PATH:+:${PATH}}"
+PATH="/opt/pycharm-2023.2.1/bin${PATH:+:${PATH}}"
+PATH="/opt/clion-2023.2.2/bin${PATH:+:${PATH}}"
 
 # Random colored pictire when launching terminal
 #   colorscript -r
@@ -32,8 +34,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -156,6 +158,22 @@ alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservat
 alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 
 alias cb='flatpak run app.getclipboard.Clipboard'
+
+alias osconnect="ssh cederle@hiveos.fiit.stuba.sk -p 9072"
+
+alias rpi_wifi="ssh marek@192.168.1.199"
+alias rpi_eth="ssh marek@192.168.1.198"
+
+alias qr='generate_qr_code'
+generate_qr_code() {
+  curl "qrenco.de/$1"
+}
+
+alias cheat='cheat_curl_help'
+cheat_curl_help() {
+curl "cht.sh/$1"
+}
+
 
 #not needed because of package python-is-python3
 #alias python='python3'
