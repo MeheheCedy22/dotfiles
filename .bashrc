@@ -159,11 +159,6 @@ alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conserva
 
 alias cb='flatpak run app.getclipboard.Clipboard'
 
-alias osconnect="ssh cederle@hiveos.fiit.stuba.sk -p 9072"
-
-alias rpi_wifi="ssh marek@192.168.1.199"
-alias rpi_eth="ssh marek@192.168.1.198"
-
 alias qr='generate_qr_code'
 generate_qr_code() {
   curl "qrenco.de/$1"
