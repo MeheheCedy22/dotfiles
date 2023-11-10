@@ -11,6 +11,7 @@ PATH="/opt/idea-IU-231.9011.34/bin${PATH:+:${PATH}}"
 PATH="/opt/thunderbird${PATH:+:${PATH}}"
 PATH="/opt/pycharm-2023.2.1/bin${PATH:+:${PATH}}"
 PATH="/opt/clion-2023.2.2/bin${PATH:+:${PATH}}"
+PATH="/home/marek/.local/share/JetBrains/Toolbox/scripts${PATH:+:${PATH}}"
 
 # Random colored pictire when launching terminal
 #   colorscript -r
@@ -152,7 +153,11 @@ alias nalaup="sudo nala update && sudo nala upgrade"
 alias nalaupd="sudo nala update"
 alias nalaupg="sudo nala upgrade"
 
-alias val="sudo valgrind --leak-check=yes -s ./a.out"
+alias val="sudo valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./a.out"
+alias compilePLS="g++ -g -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers *.cpp -o out_bin"
+alias runPLS="./out_bin"
+alias compileANDrunPLS="compilePLS && runPLS"
+alias compileANDvalPLS="compilePLS && val"
 
 alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_1 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
