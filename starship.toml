@@ -55,5 +55,12 @@ disabled = false
 disabled = false
 unknown_indicator = 'unknown shell'
 
+[cmake]
+symbol = '🛠️ '
+disabled = false
+
 # [time]
 # disabled = false
+
+
+
