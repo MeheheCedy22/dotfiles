@@ -4,14 +4,11 @@
 
 
 #_____________________________________________________________________________________________
+### my special settings ###
 PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
-#   PATH="/usr/lib/jvm/jdk-18/bin${PATH:+:${PATH}}" #pridane aby fungoval javac v celom systeme
 PATH="/usr/bin/gdb${PATH:+:${PATH}}"
-PATH="/opt/idea-IU-231.9011.34/bin${PATH:+:${PATH}}"
-PATH="/opt/thunderbird${PATH:+:${PATH}}"
-PATH="/opt/pycharm-2023.2.1/bin${PATH:+:${PATH}}"
-PATH="/opt/clion-2023.2.2/bin${PATH:+:${PATH}}"
-PATH="/home/marek/.local/share/JetBrains/Toolbox/scripts${PATH:+:${PATH}}"
+#   PATH="/usr/lib/jvm/jdk-18/bin${PATH:+:${PATH}}" #pridane aby fungoval javac v celom systeme
+#   PATH="/opt/thunderbird${PATH:+:${PATH}}"
 
 # Random colored pictire when launching terminal
 #   colorscript -r
@@ -137,11 +134,12 @@ fi
 
 
 #_____________________________________________________________________________________________
-###my aliases###
+### my aliases ###
 
-#for exa -h flag means header, not human readable
+# for eza -h flag means header, not human readable
 #   alias lss='ls -alh1 --group-directories-first'
-alias lss='exa -alh --color=always --group-directories-first'
+# exa replaced by eza (exa is no longer maintained, eza is community fork of exa)
+alias lss='eza -alh --color=always --group-directories-first'
 alias cls='clear'
 alias watchvpn='watch -n 1 "hotspotshield status"'
 
@@ -154,15 +152,18 @@ alias nalaupd="sudo nala update"
 alias nalaupg="sudo nala upgrade"
 
 alias val="sudo valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./a.out"
-alias compilePLS="g++ -g -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers *.cpp -o out_bin"
+alias compilePLS="g++ -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers *.cpp -o out_bin"
+alias compilePLSdebug="g++ -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers -g *.cpp"
 alias runPLS="./out_bin"
 alias compileANDrunPLS="compilePLS && runPLS"
 alias compileANDvalPLS="compilePLS && val"
 
-alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_1 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
-alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+# only for old lenovo legion Y520 laptop
+#   alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_1 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+#   alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 
-alias cb='flatpak run app.getclipboard.Clipboard'
+# clipboard manager in terminal
+#   alias cb='flatpak run app.getclipboard.Clipboard'
 
 alias qr='generate_qr_code'
 generate_qr_code() {
@@ -175,17 +176,12 @@ curl "cht.sh/$1"
 }
 
 
-#not needed because of package python-is-python3
-#alias python='python3'
+# not needed because of package python-is-python3
+#   alias python='python3'
 
 
-#source ~/.bash_completion/alacritty
-
-
+#   source ~/.bash_completion/alacritty
 #_____________________________________________________________________________________________
-
-
-
 
 
 
