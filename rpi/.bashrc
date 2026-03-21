@@ -4,7 +4,7 @@
 
 # ______________ stuff added by me _________________
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+eval "$(/home/marek/.local/bin/fzf --bash)"
 eval "$(starship init bash)"
 #
 # __________________________________________________
@@ -54,12 +54,12 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -128,7 +128,7 @@ export LANG=en_US.UTF-8
 # for eza -h flag means header, not human readable
 #   alias lss='ls -alh1 --group-directories-first'
 # exa replaced by eza (exa is no longer maintained, eza is community fork of exa)
-alias lss='exa -alh --color=always --group-directories-first'
+alias lss='exa -alhg --color=auto --group-directories-first --icons'
 alias cls='clear'
 # alias ff="fzf --height 75% --layout reverse --multi --border --preview 'batcat --color=always {}'"
 
@@ -166,4 +166,3 @@ curl "cht.sh/$1"
 
 #   source ~/.bash_completion/alacritty
 #_____________________________________________________________________________________________
-

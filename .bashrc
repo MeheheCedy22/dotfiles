@@ -2,21 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-
-#_____________________________________________________________________________________________
-### my special settings ###
-PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
-PATH="/usr/bin/gdb${PATH:+:${PATH}}"
-#   PATH="/usr/lib/jvm/jdk-18/bin${PATH:+:${PATH}}" #pridane aby fungoval javac v celom systeme
-#   PATH="/opt/thunderbird${PATH:+:${PATH}}"
-
-# Random colored pictire when launching terminal
-#   colorscript -r
-
-#starship better shell prompt
+# ______________ stuff added by me _________________
+# Set up fzf key bindings and fuzzy completion
+eval "$(/home/marek/.local/bin/fzf --bash)"
 eval "$(starship init bash)"
-#_____________________________________________________________________________________________
-
+#
+# __________________________________________________
 
 # If not running interactively, don't do anything
 case $- in
@@ -139,9 +130,18 @@ fi
 # for eza -h flag means header, not human readable
 #   alias lss='ls -alh1 --group-directories-first'
 # exa replaced by eza (exa is no longer maintained, eza is community fork of exa)
-alias lss='eza -alh --color=always --group-directories-first'
+alias lss='eza -alh --smart-group --color=auto --group-directories-first --icons=auto'
 alias cls='clear'
-alias watchvpn='watch -n 1 "hotspotshield status"'
+# alias ff="fzf --height 75% --layout reverse --multi --border --preview 'batcat --color=always {}'"
+
+# alias ff="fzf --height 75% --layout reverse --multi --border --preview 'bat --color=always {}'"
+# export FZF_DEFAULT_OPTS="--style full --height 75% --layout reverse --multi --border --preview 'bat --color=always {}'"
+
+export FZF_DEFAULT_OPTS="--style full --height 75% --layout reverse --multi --border"
+alias ff='fzf'
+
+# alias bat='batcat'
+alias bb='bat'
 
 alias aptup="sudo apt update && sudo apt upgrade"
 alias aptupd="sudo apt update"
@@ -150,20 +150,6 @@ alias aptupg="sudo apt upgrade"
 alias nalaup="sudo nala update && sudo nala upgrade"
 alias nalaupd="sudo nala update"
 alias nalaupg="sudo nala upgrade"
-
-alias val="sudo valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./a.out"
-alias compilePLS="g++ -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers *.cpp -o out_bin"
-alias compilePLSdebug="g++ -Wall -Wformat -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers -g *.cpp"
-alias runPLS="./out_bin"
-alias compileANDrunPLS="compilePLS && runPLS"
-alias compileANDvalPLS="compilePLS && val"
-
-# only for old lenovo legion Y520 laptop
-#   alias battery_treshold_on="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_1 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
-#   alias battery_treshold_off="sudo cp ~/tlp-battery-treshold-activator-me/conservation_mode_0 /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
-
-# clipboard manager in terminal
-#   alias cb='flatpak run app.getclipboard.Clipboard'
 
 alias qr='generate_qr_code'
 generate_qr_code() {
@@ -182,6 +168,3 @@ curl "cht.sh/$1"
 
 #   source ~/.bash_completion/alacritty
 #_____________________________________________________________________________________________
-
-
-
