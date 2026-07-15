@@ -2,7 +2,7 @@
 # if profile files do not exist, they will be created and the custom profile path will be added to them
 # if profile files already exist, they will be backed up and the custom profile path will be added to them
 
-$GitRepoPath = "$env:HOME/dotfiles/"
+$GitRepoPath = "$env:HOME/dotfiles"
 $CustomProfileDir = Join-Path $env:HOME ".config/mypwsh"
 $CustomProfilePath = Join-Path $CustomProfileDir "pwsh_profile.ps1"
 
