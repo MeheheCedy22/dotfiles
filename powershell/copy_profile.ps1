@@ -26,7 +26,7 @@ foreach ($ProfilePath in $ProfilePaths) {
         Write-Host "New profile created: $ProfilePath" -ForegroundColor Green
     }
     Write-Host "Adding custom profile path to $ProfilePath" -ForegroundColor Green
-    Add-Content -Append -Value ". `"$CustomProfilePath`"" -Path $ProfilePath
+    Add-Content -Value ". `"$CustomProfilePath`"" -Path $ProfilePath
 }
 
 # create custom profile dir
