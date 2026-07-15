@@ -37,10 +37,10 @@ else {
 }
 
 # copy custom profile scripts to the custom profile dir
-if (Test-Path -Path "$GitRepoPath\Powershell\pwsh_profile.ps1") {
-    Copy-Item "$GitRepoPath\Powershell\pwsh_profile.ps1" "$CustomProfileDir\"
+if (Test-Path -Path "$GitRepoPath/Powershell/pwsh_profile.ps1") {
+    Copy-Item "$GitRepoPath/Powershell/pwsh_profile.ps1" "$CustomProfileDir/"
     Write-Host "Copied custom profile script to $CustomProfileDir" -ForegroundColor Green
 }
 else {
-    Write-Host "Custom profile script not found in the repository: $GitRepoPath\Powershell\pwsh_profile.ps1" -ForegroundColor Red
+    Write-Host "Custom profile script not found in the repository: $GitRepoPath/Powershell/pwsh_profile.ps1" -ForegroundColor Red
 }
